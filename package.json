@@ -1,0 +1,12 @@
+{
+  "name": "cat_vanilla",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": ""
+  },
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
