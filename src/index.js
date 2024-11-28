@@ -2,9 +2,10 @@ const $keyword = document.querySelector(".keyword");
 const $keywords = document.querySelector(".keywords");
 const $searchResults = document.querySelector(".search-results");
 
-$keyword.addEventListener("keyup", (e) => {
-  const { value } = e.target;
-  const { key } = e;
+$keyword.addEventListener("keyup", (event) => {
+  const { value } = event.target;
+  const { key } = event;
+  console.log(value, key);
 
   if (key === "Enter") {
     fetch(
