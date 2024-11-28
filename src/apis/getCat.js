@@ -10,7 +10,7 @@ const request = async (url) => {
   }
 };
 
-export const fetchKeywords = (keyword) => {
+export const fetchKeyword = (keyword) => {
   return request(`${API_URL}/dev/api/cats/keywords?q=${keyword}`);
 };
 
