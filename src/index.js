@@ -5,7 +5,7 @@ const $searchResults = document.querySelector(".search-results");
 $keyword.addEventListener("keyup", (event) => {
   const { value } = event.target;
   const { key } = event;
-  console.log(value, key);
+  console.log(value);
 
   if (key === "Enter") {
     fetch(
@@ -13,10 +13,15 @@ $keyword.addEventListener("keyup", (event) => {
     )
       .then((res) => res.json())
       .then((results) => {
+        console.log(results);
         if (results.data) {
-          $searchResults.innerHTML = results.data
-            .map((cat) => `<article><img src="${cat.url}" /></article>`)
-            .join("");
+          results.data.forEach((cat) => {
+            const article = document.createElement("article");
+            const img = document.createElement("img");
+            img.src = cat.url;
+            article.appendChild(img);
+            $searchResults.appendChild(article);
+          });
         }
       });
   }
